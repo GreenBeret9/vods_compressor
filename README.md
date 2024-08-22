@@ -28,7 +28,7 @@ $presetPath = "C:\path\to\handbrake_preset.json"
 
 - **$directory**: The absolute path where your videos are stored. This directory can also contain subdirectories with videos.
 - **$presetPath**: The full path to the HandBrake preset file (`.json`) you downloaded.
-
+```
 ## 2. Run the Script
 
 1. Open **PowerShell** or a terminal.
@@ -39,7 +39,7 @@ cd path\to\HandBrakeCLI-1.8.2-win-x86_64
 
 Once you're in the correct directory, run the PowerShell script:
 
-```bash
+```
 .\vods_compressor.ps1
 
 The script will then begin processing videos, compressing them and placing the compressed versions into a compressed/ subfolder.
