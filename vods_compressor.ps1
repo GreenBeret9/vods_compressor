@@ -1,8 +1,16 @@
-# Set the root directory to scan for videos
-$directory = "C:\path\to\vods"
+param (
+    [Parameter(Mandatory=$true)]
+    [string]$directory  # Directory path must be provided
+)
 
 # Path to your exported HandBrakeCLI preset file
 $presetPath = "C:\path\to\handbrake_preset.json"
+
+# Check if the directory exists
+if (!(Test-Path $directory)) {
+    Write-Host "Error: Directory $directory does not exist."
+    exit 1
+}
 
 # Recursively find .mkv, .mp4, and .m4v files
 Get-ChildItem -Path $directory -Recurse -Include *.mkv, *.mp4, *.m4v | ForEach-Object {
@@ -34,4 +42,5 @@ Get-ChildItem -Path $directory -Recurse -Include *.mkv, *.mp4, *.m4v | ForEach-O
         & .\HandBrakeCLI -i $file -o $outputFile --preset-import-file $presetPath
     }
 }
+
 
