@@ -19,7 +19,7 @@ Get-ChildItem -Path $directory -Recurse -Include *.mkv, *.mp4, *.m4v | ForEach-O
     $compressedDir = Join-Path $fileDir "compressed"
 
     # Skip if the file is already in the "compressed" folder
-    if ($fileDir -like "*\compressed") {
+    if ($fileDir -like "*\compressed*") {
         Write-Host "Skipping: $file is in a 'compressed' folder."
         return
     }
