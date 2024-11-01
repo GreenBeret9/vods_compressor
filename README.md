@@ -42,3 +42,37 @@ Once you're in the correct directory, run the PowerShell script:
 The script will then begin processing videos, compressing them and placing the compressed versions into a compressed/ subfolder.
  If a compressed version of the video already exists, it will skip that file.
 
+
+ ## Python Instructions
+
+### 1. Edit the Python Script
+After downloading the `compress_vods.py` script and the HandBrake preset file (`.json`):
+
+1. Open the `compress_vods.py` file in a text editor.
+2. Update the `PRESET_PATH` variable to specify the full path to the HandBrake preset file:
+
+   ```python
+   # Path to your exported HandBrakeCLI preset file
+   PRESET_PATH = r"C:\path\to\handbrake_preset.json"
+   ```
+
+3. Save the changes to the script.
+
+### 2. Run the Python Script
+
+1. Open **Command Prompt** or **Terminal**.
+2. Navigate to the directory where the **HandBrakeCLI** executable is located:
+
+   ```bash
+   cd C:\path\to\HandBrakeCLI-1.8.2-win-x86_64
+   ```
+
+3. Run the Python script by passing the path of the directory containing your videos:
+
+   ```bash
+   python compress_vods.py "C:/path/to/videos"
+   ```
+
+The Python script will then start processing videos. For each video, it will compress it and place the output in a `compressed/` subfolder. If the compressed file already exists, it will skip that file.
+
+
